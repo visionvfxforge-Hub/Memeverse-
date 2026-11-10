@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>MemeVerse – Memes, Roasts & Viral Games</title>
+<meta name="description" content="Free memes, roast cards, meme personality quizzes, would-you-rather, truth or dare and meme sounds. Share the chaos with your friends!">
+<meta property="og:title" content="MemeVerse – Memes, Roasts & Viral Games">
+<meta property="og:description" content="Roast your friends, find your meme personality and share the madness.">
+<meta name="theme-color" content="#0b0620">
+<!-- Google AdSense Auto ads: replace XXXX with your publisher ID -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--pink:#ff2d95;--violet:#7c3aed;--cyan:#22d3ee;--lime:#a3e635;--gold:#facc15;--bg:#0b0620;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}
+body{background:var(--bg);color:#fff;font-family:'Segoe UI',system-ui,-apple-system,Roboto,'Noto Sans',sans-serif;overflow-x:hidden;min-height:100vh;
+  background-image:radial-gradient(circle at 15% 10%,rgba(124,58,237,.35),transparent 40%),radial-gradient(circle at 85% 30%,rgba(255,45,149,.25),transparent 40%),radial-gradient(circle at 50% 100%,rgba(34,211,238,.2),transparent 45%)}
+.nav-glass{background:rgba(11,6,32,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100}
+.brand{font-weight:900;font-size:1.5rem;letter-spacing:-.5px;color:#fff;text-decoration:none}
+.brand span{background:linear-gradient(90deg,var(--pink),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.score-chip{background:linear-gradient(90deg,var(--gold),var(--pink));color:#1a0b3d;font-weight:800;border:none;border-radius:50px;padding:6px 12px;font-size:.9rem}
+.lang-select{background:rgba(255,255,255,.08);color:#fff;border:1px solid var(--line);border-radius:50px;padding:6px 12px;font-size:.9rem;font-weight:600}
+.lang-select option{color:#000}
+.hero{position:relative;overflow:hidden;padding:90px 20px 70px;text-align:center;border-radius:0 0 40px 40px;background:linear-gradient(135deg,rgba(124,58,237,.9),rgba(255,45,149,.85),rgba(34,211,238,.6));background-size:200% 200%;animation:grad 10s ease infinite}
+@keyframes grad{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero h1{font-size:clamp(2.2rem,6vw,4.2rem);font-weight:900;line-height:1.15;text-shadow:0 4px 30px rgba(0,0,0,.25)}
+.hero .lead{font-size:1.15rem;opacity:.95;max-width:640px;margin:14px auto 0}
+.float-emoji{position:absolute;font-size:2.2rem;opacity:.35;animation:float 7s ease-in-out infinite;pointer-events:none;user-select:none}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22px) rotate(12deg)}}
+.btn-cta{background:#fff;color:#1a0b3d;font-weight:800;border:none;border-radius:50px;padding:14px 34px;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .25s,box-shadow .25s}
+.btn-cta:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 40px rgba(0,0,0,.35);color:#1a0b3d}
+.share-pill{border-radius:50px;font-weight:600;padding:8px 18px;border:1px solid rgba(255,255,255,.4);color:#fff;background:rgba(0,0,0,.15);transition:all .2s;text-decoration:none;display:inline-block;cursor:pointer}
+.share-pill:hover{background:#fff;color:#1a0b3d}
+.ticker{overflow:hidden;white-space:nowrap;background:linear-gradient(90deg,var(--violet),var(--pink));padding:12px 0;font-weight:700}
+.ticker-track{display:inline-block;padding-left:100%;animation:scroll 28s linear infinite}
+@keyframes scroll{to{transform:translateX(-100%)}}
+.ticker-track span{margin:0 2.2rem}
+.section-title{font-weight:900;font-size:2rem;letter-spacing:-.5px}
+.glass{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:24px;padding:28px;height:100%;transition:transform .35s,box-shadow .35s,border-color .35s;position:relative;overflow:hidden}
+.glass:hover{border-color:rgba(255,255,255,.3);box-shadow:0 20px 50px rgba(124,58,237,.35);transform:translateY(-4px)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.feat-icon{width:56px;height:56px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:14px;box-shadow:0 8px 20px rgba(255,45,149,.35)}
+.feat-title{font-weight:800;font-size:1.4rem}
+.badge-new{font-size:.7rem;background:var(--lime);color:#000;padding:3px 10px;border-radius:50px;font-weight:800;vertical-align:middle;margin-left:6px}
+.form-control{background:rgba(0,0,0,.35)!important;border:1px solid var(--line)!important;color:#fff!important;border-radius:14px;padding:12px 16px}
+.form-control:focus{box-shadow:0 0 0 3px rgba(34,211,238,.35)!important}
+.btn-grad{background:linear-gradient(90deg,var(--pink),var(--violet));border:none;color:#fff;font-weight:800;border-radius:50px;padding:12px 26px;transition:transform .2s,box-shadow .2s}
+.btn-grad:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(255,45,149,.4);color:#fff}
+.result-box{background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:18px;padding:20px;margin-top:16px;animation:pop .4s ease}
+@keyframes pop{from{transform:scale(.96);opacity:0}to{transform:none;opacity:1}}
+.choice{display:block;width:100%;text-align:left;background:rgba(255,255,255,.06);border:1px solid var(--line);color:#fff;border-radius:14px;padding:12px 16px;margin-bottom:10px;font-weight:600;transition:all .2s}
+.choice:hover{background:rgba(34,211,238,.15);border-color:var(--cyan);transform:translateX(4px)}
+.sound-btn{background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.5);color:#fff;border-radius:18px;padding:18px 10px;font-weight:700;width:100%;transition:all .2s}
+.sound-btn:hover{background:var(--cyan);color:#06121a;transform:translateY(-3px)}
+.sound-btn:active{transform:scale(.94)}
+.output-box{min-height:110px;font-size:1.25rem;font-weight:600;display:flex;align-items:center;justify-content:center;text-align:center;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:16px}
+.burst{position:fixed;font-size:1.8rem;pointer-events:none;animation:fly 1s ease-out forwards;z-index:9999}
+@keyframes fly{to{transform:translateY(-140px) rotate(360deg);opacity:0}}
+.toast-box{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#fff;color:#1a0b3d;padding:12px 22px;border-radius:50px;font-weight:700;box-shadow:0 12px 30px rgba(0,0,0,.35);z-index:9998;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;max-width:90vw;text-align:center}
+.toast-box.show{opacity:1;transform:translateX(-50%) translateY(-6px)}
+.admin-chip{background:var(--lime);color:#000;font-weight:800;font-size:.75rem;border-radius:50px;padding:4px 10px;border:none}
+footer a{color:rgba(255,255,255,.6);text-decoration:none;margin:0 8px}
+footer a:hover{color:#fff}
+.rain{position:fixed;top:-60px;font-size:1.8rem;animation:rainFall linear forwards;pointer-events:none;z-index:9997}
+@keyframes rainFall{to{transform:translateY(110vh) rotate(720deg)}}
+.vibe-btn{font-size:2rem;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:50%;width:76px;height:76px;transition:transform .2s;color:#fff}
+.vibe-btn:hover{transform:scale(1.15) rotate(-6deg);border-color:var(--cyan)}
+.vibe-btn:active{transform:scale(1.4)}
+.chaos-btn{position:fixed;bottom:20px;left:20px;z-index:99;box-shadow:0 10px 30px rgba(255,45,149,.45);border:none}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav class="nav-glass px-3 py-2 d-flex align-items-center justify-content-between gap-2">
+  <a class="brand" href="index.html">🔥 Meme<span>Verse</span></a>
+  <div class="d-flex align-items-center gap-2">
+    <button id="score" class="score-chip" title="Chaos Score">⭐ 0</button>
+    <select id="lang" class="lang-select" aria-label="Language">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="hinglish">Hinglish</option>
+      <option value="kn">ಕನ್ನಡ</option>
+      <option value="mr">मराठी</option>
+      <option value="te">తెలుగు</option>
+    </select>
+    <a href="#features" class="btn btn-sm btn-outline-light rounded-pill d-none d-sm-inline-block px-3" data-i18n="play">Play</a>
+    <button id="admin-btn" class="btn btn-sm admin-chip d-none" data-bs-toggle="modal" data-bs-target="#adminModal">+ Add Feature</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="float-emoji" style="left:6%;top:14%">😂</span>
+  <span class="float-emoji" style="right:8%;top:18%;animation-delay:1.5s">🔥</span>
+  <span class="float-emoji" style="left:14%;bottom:12%;animation-delay:3s">💀</span>
+  <span class="float-emoji" style="right:14%;bottom:16%;animation-delay:2s">⚡</span>
+  <h1 data-i18n="heroTitle">Your Daily Dose of Chaos 🚀</h1>
+  <p class="lead" data-i18n="heroLead">Roast your friends, discover your meme personality and share the madness.</p>
+  <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+    <a href="#features" class="btn btn-cta"><i class="fa-solid fa-play me-2"></i><span data-i18n="startPlaying">Start Playing</span></a>
+  </div>
+  <div class="d-flex flex-wrap justify-content-center gap-2 mt-4">
+    <button class="share-pill" data-action="share-wa"><i class="fa-brands fa-whatsapp me-1"></i><span data-i18n="whatsapp">WhatsApp</span></button>
+    <button class="share-pill" data-action="share-x"><i class="fa-brands fa-x-twitter me-1"></i>X</button>
+    <button class="share-pill" data-action="copy-link"><i class="fa-solid fa-link me-1"></i><span data-i18n="copyLink">Copy link</span></button>
+  </div>
+</header>
+
+<div class="ticker"><div class="ticker-track" id="ticker"></div></div>
+
+<section class="container mt-5 text-center reveal">
+  <h3 class="fw-bold" data-i18n="vibeTitle">How's your vibe today?</h3>
+  <div class="d-flex justify-content-center gap-3 flex-wrap mt-3" id="vibe"></div>
+  <p class="small mt-3" style="color:rgba(255,255,255,.75)" id="vibe-most"></p>
+</section>
+
+<main class="container py-5">
+  <div class="text-center mb-5 reveal">
+    <h2 class="section-title" data-i18n="pickVibe">Pick your vibe</h2>
+    <p style="color:rgba(255,255,255,.7)" data-i18n="builtShare">Every game here is built to be shared.</p>
+  </div>
+  <div class="row g-4" id="features"></div>
+</main>
+
+<!-- Owner-only Feature Studio (English only, for the owner) -->
+<div class="modal fade" id="adminModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content" style="background:#140a33;color:#fff;border:1px solid var(--line);border-radius:24px">
+      <div class="modal-header" style="border-color:var(--line)">
+        <h5 class="modal-title fw-bold"><i class="fa-solid fa-wand-magic-sparkles me-2" style="color:var(--lime)"></i>Feature Studio</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p class="small" style="color:rgba(255,255,255,.7)">Preview only. For everyone to see, export the JSON and paste it into <code>features.json</code>.</p>
+        <div class="row g-3">
+          <div class="col-md-6"><label class="form-label">Title</label><input id="f-title" class="form-control"></div>
+          <div class="col-md-3"><label class="form-label">Type</label>
+            <select id="f-type" class="form-select form-control"><option value="roast">Roast</option><option value="card">Random card</option><option value="sound">Soundboard</option></select></div>
+          <div class="col-md-3"><label class="form-label">Color</label>
+            <select id="f-color" class="form-select form-control"><option value="pink">Pink</option><option value="cyan">Cyan</option><option value="gold">Gold</option><option value="lime">Lime</option></select></div>
+          <div class="col-12"><label class="form-label">Description</label><input id="f-desc" class="form-control"></div>
+          <div class="col-12"><label class="form-label">Content <span class="small" id="f-hint" style="color:rgba(255,255,255,.6)"></span></label>
+            <textarea id="f-items" rows="5" class="form-control"></textarea></div>
+        </div>
+        <button class="btn btn-grad w-100 mt-3" id="f-save">Save &amp; Preview</button>
+        <hr style="border-color:var(--line)" class="my-4">
+        <div id="custom-list" class="small mb-3"></div>
+        <button class="btn btn-outline-light btn-sm rounded-pill" id="btn-export">Export JSON</button>
+        <textarea id="io" rows="6" class="form-control mt-2 small"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="text-center py-4 mt-5" style="border-top:1px solid var(--line)">
+  <p class="mb-2 small"><a href="about.html" data-i18n="about">About</a> · <a href="contact.html" data-i18n="contact">Contact</a> · <a href="privacy.html" data-i18n="privacy">Privacy Policy</a> · <a href="terms.html" data-i18n="terms">Terms</a></p>
+  <p class="small mb-0" style="color:rgba(255,255,255,.6)" data-i18n="rights">© 2026 MemeVerse. All rights reserved.</p>
+</footer>
+
+<button id="chaos" class="btn-grad chaos-btn" data-i18n="chaos">Chaos Mode 🌪️</button>
+
+<div id="toast" class="toast-box"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ================= Translations (UI text). Feature content lives in features.json ================= */
+const I18N = {
+  en: { play:"Play", heroTitle:"Your Daily Dose of Chaos 🚀", heroLead:"Roast your friends, discover your meme personality and share the madness.", startPlaying:"Start Playing", whatsapp:"WhatsApp", copyLink:"Copy link", pickVibe:"Pick your vibe", builtShare:"Every game here is built to be shared.", about:"About", contact:"Contact", privacy:"Privacy Policy", terms:"Terms", rights:"© 2026 MemeVerse. All rights reserved.",
+    roastBtn:"Roast Them 🔥", roastPh:"Enter a name...", enterName:"Enter a name first 😈", roastLevel:"Roast Level", startQuiz:"Start the quiz ▶", question:"Question", of:"of", personalityIs:"Your meme personality is", retake:"Retake quiz", tapBtn:"Tap the button!", next:"Next ▶", newQ:"New question ▶", tapNewQ:"Tap \"New question\" to start!", wyrQ:"Would you rather…", youChoose:"You'd choose", nextQ:"Next question ▶", pickPoison:"Pick your poison 😈", truth:"Truth 🤔", dare:"Dare 🔥", truthLabel:"TRUTH", dareLabel:"DARE", nextRound:"Next round 🎲", linkCopied:"Link copied! Send it to your friends 🔥", soundMissing:"Sound file not found yet 🔇", wrongPass:"Wrong password ❌", adminOn:"Admin mode on ✨",
+    f:{ roast:["AI Roast Generator","Type a name and get a savage roast with a Roast Level score."], quiz:["Meme Personality Quiz","Three quick questions. Find out which meme you really are."], wyr:["Would You Rather","Pick a side, share it, and see if your friends agree."], tod:["Truth or Dare 😈","Pick Truth or Dare. Every round is a new question or task, so no repeats."], sound:["Meme Soundboard","Tap a sound and let the chaos speak for you."], quotes:["Meme Quote of the Day","Tap for a random line made for sharing."] } },
+
+  hi: { play:"खेलें", heroTitle:"आपकी रोज़ की मस्ती का डोज़ 🚀", heroLead:"दोस्तों को रोस्ट करो, अपनी मीम पर्सनैलिटी जानो और मज़ा शेयर करो।", startPlaying:"खेलना शुरू करें", whatsapp:"WhatsApp", copyLink:"लिंक कॉपी करें", pickVibe:"अपना मूड चुनें", builtShare:"यहाँ हर गेम शेयर करने के लिए बना है।", about:"हमारे बारे में", contact:"संपर्क", privacy:"प्राइवेसी पॉलिसी", terms:"नियम और शर्तें", rights:"© 2026 MemeVerse. सर्वाधिकार सुरक्षित।",
+    roastBtn:"रोस्ट करो 🔥", roastPh:"कोई नाम लिखो...", enterName:"पहले नाम लिखो 😈", roastLevel:"रोस्ट लेवल", startQuiz:"क्विज़ शुरू करो ▶", question:"सवाल", of:"में से", personalityIs:"आपकी मीम पर्सनैलिटी है", retake:"फिर से खेलो", tapBtn:"बटन दबाओ!", next:"अगला ▶", newQ:"नया सवाल ▶", tapNewQ:"शुरू करने के लिए \"नया सवाल\" दबाओ!", wyrQ:"क्या आप चुनेंगे…", youChoose:"आपने चुना", nextQ:"अगला सवाल ▶", pickPoison:"अपनी पसंद चुनो 😈", truth:"सच 🤔", dare:"हिम्मत 🔥", truthLabel:"सच", dareLabel:"हिम्मत", nextRound:"अगला राउंड 🎲", linkCopied:"लिंक कॉपी हो गया! दोस्तों को भेजो 🔥", soundMissing:"साउंड फ़ाइल अभी नहीं मिली 🔇", wrongPass:"गलत पासवर्ड ❌", adminOn:"एडमिन मोड ऑन ✨",
+    f:{ roast:["AI रोस्ट जनरेटर","नाम लिखो और रोस्ट लेवल स्कोर के साथ जबरदस्त रोस्ट पाओ।"], quiz:["मीम पर्सनैलिटी क्विज़","तीन छोटे सवाल। जानो आप कौन सा मीम हो।"], wyr:["क्या आप चुनेंगे","एक साइड चुनो, शेयर करो और देखो दोस्त सहमत हैं या नहीं।"], tod:["सच या हिम्मत 😈","सच या हिम्मत चुनो। हर राउंड में नया सवाल या टास्क, कोई दोहराव नहीं।"], sound:["मीम साउंडबोर्ड","किसी साउंड पर टैप करो और मस्ती शुरू।"], quotes:["आज का मीम कोट","रैंडम मज़ेदार लाइन के लिए टैप करो।"] } },
+
+  hinglish: { play:"Khelo", heroTitle:"Aapki Daily Dose of Chaos 🚀", heroLead:"Dosto ko roast karo, apni meme personality jaano aur masti share karo.", startPlaying:"Khelna Shuru Karo", whatsapp:"WhatsApp", copyLink:"Link Copy Karo", pickVibe:"Apna vibe chuno", builtShare:"Yahan har game share karne ke liye bana hai.", about:"About", contact:"Contact", privacy:"Privacy Policy", terms:"Terms", rights:"© 2026 MemeVerse. Sarvadhikar surakshit.",
+    roastBtn:"Roast Karo 🔥", roastPh:"Koi naam likho...", enterName:"Pehle naam likho 😈", roastLevel:"Roast Level", startQuiz:"Quiz Shuru Karo ▶", question:"Sawaal", of:"of", personalityIs:"Aapki meme personality hai", retake:"Dobara Khelo", tapBtn:"Button dabao!", next:"Next ▶", newQ:"Naya Sawaal ▶", tapNewQ:"Shuru karne ke liye \"Naya Sawaal\" dabao!", wyrQ:"Would you rather…", youChoose:"Aapne chuna", nextQ:"Agla Sawaal ▶", pickPoison:"Apna poison chuno 😈", truth:"Truth 🤔", dare:"Dare 🔥", truthLabel:"TRUTH", dareLabel:"DARE", nextRound:"Next Round 🎲", linkCopied:"Link copy ho gaya! Dosto ko bhejo 🔥", soundMissing:"Sound file abhi nahi mili 🔇", wrongPass:"Galat password ❌", adminOn:"Admin mode on ✨",
+    f:{ roast:["AI Roast Generator","Naam daalo aur Roast Level score ke saath savage roast pao."], quiz:["Meme Personality Quiz","Teen chhote sawaal. Jaano tum kaunsa meme ho."], wyr:["Would You Rather","Ek side chuno, share karo aur dekho dost agree karte hain ya nahi."], tod:["Truth or Dare 😈","Truth ya Dare chuno. Har round me naya sawaal ya task, koi repeat nahi."], sound:["Meme Soundboard","Kisi sound par tap karo aur chaos bolne do."], quotes:["Meme Quote of the Day","Random mazedaar line ke liye tap karo."] } },
+
+  kn: { play:"ಆಟ ಆಡಿ", heroTitle:"ನಿಮ್ಮ ದಿನದ ಮೋಜಿನ ಡೋಸ್ 🚀", heroLead:"ಸ್ನೇಹಿತರನ್ನು ರೋಸ್ಟ್ ಮಾಡಿ, ನಿಮ್ಮ ಮೀಮ್ ವ್ಯಕ್ತಿತ್ವ ತಿಳಿಯಿರಿ ಮತ್ತು ಮಜಾ ಹಂಚಿಕೊಳ್ಳಿ.", startPlaying:"ಆಡಲು ಪ್ರಾರಂಭಿಸಿ", whatsapp:"WhatsApp", copyLink:"ಲಿಂಕ್ ನಕಲಿಸಿ", pickVibe:"ನಿಮ್ಮ ಮೂಡ್ ಆಯ್ಕೆಮಾಡಿ", builtShare:"ಇಲ್ಲಿನ ಪ್ರತಿ ಆಟವೂ ಹಂಚಿಕೊಳ್ಳಲು ರೂಪಿಸಲಾಗಿದೆ.", about:"ನಮ್ಮ ಬಗ್ಗೆ", contact:"ಸಂಪರ್ಕ", privacy:"ಗೌಪ್ಯತಾ ನೀತಿ", terms:"ನಿಯಮಗಳು", rights:"© 2026 MemeVerse. ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
+    roastBtn:"ರೋಸ್ಟ್ ಮಾಡಿ 🔥", roastPh:"ಒಂದು ಹೆಸರು ಬರೆಯಿರಿ...", enterName:"ಮೊದಲು ಹೆಸರು ಬರೆಯಿರಿ 😈", roastLevel:"ರೋಸ್ಟ್ ಮಟ್ಟ", startQuiz:"ಕ್ವಿಜ್ ಪ್ರಾರಂಭಿಸಿ ▶", question:"ಪ್ರಶ್ನೆ", of:"ರಲ್ಲಿ", personalityIs:"ನಿಮ್ಮ ಮೀಮ್ ವ್ಯಕ್ತಿತ್ವ", retake:"ಮತ್ತೆ ಆಡಿ", tapBtn:"ಬಟನ್ ಒತ್ತಿ!", next:"ಮುಂದೆ ▶", newQ:"ಹೊಸ ಪ್ರಶ್ನೆ ▶", tapNewQ:"ಪ್ರಾರಂಭಿಸಲು \"ಹೊಸ ಪ್ರಶ್ನೆ\" ಒತ್ತಿ!", wyrQ:"ನೀವು ಯಾವುದನ್ನು ಆಯ್ಕೆ ಮಾಡುತ್ತೀರಿ…", youChoose:"ನೀವು ಆರಿಸಿದ್ದು", nextQ:"ಮುಂದಿನ ಪ್ರಶ್ನೆ ▶", pickPoison:"ನಿಮ್ಮ ಆಯ್ಕೆ ಮಾಡಿ 😈", truth:"ಸತ್ಯ 🤔", dare:"ಸವಾಲು 🔥", truthLabel:"ಸತ್ಯ", dareLabel:"ಸವಾಲು", nextRound:"ಮುಂದಿನ ರೌಂಡ್ 🎲", linkCopied:"ಲಿಂಕ್ ನಕಲಾಗಿದೆ! ಸ್ನೇಹಿತರಿಗೆ ಕಳುಹಿಸಿ 🔥", soundMissing:"ಧ್ವನಿ ಫೈಲ್ ಇನ್ನೂ ಸಿಗಲಿಲ್ಲ 🔇", wrongPass:"ತಪ್ಪು ಪಾಸ್‌ವರ್ಡ್ ❌", adminOn:"ಅಡ್ಮಿನ್ ಮೋಡ್ ಆನ್ ✨",
+    f:{ roast:["AI ರೋಸ್ಟ್ ಜನರೇಟರ್","ಹೆಸರು ಬರೆದು ರೋಸ್ಟ್ ಮಟ್ಟದ ಅಂಕದೊಂದಿಗೆ ಮಜಾದಾಯಕ ರೋಸ್ಟ್ ಪಡೆಯಿರಿ."], quiz:["ಮೀಮ್ ವ್ಯಕ್ತಿತ್ವ ಕ್ವಿಜ್","ಮೂರು ಸಣ್ಣ ಪ್ರಶ್ನೆಗಳು. ನೀವು ಯಾವ ಮೀಮ್ ಎಂದು ತಿಳಿಯಿರಿ."], wyr:["ನೀವು ಯಾವುದನ್ನು ಆರಿಸುತ್ತೀರಿ","ಒಂದು ಆಯ್ಕೆ ಮಾಡಿ, ಹಂಚಿಕೊಳ್ಳಿ ಮತ್ತು ಸ್ನೇಹಿತರು ಒಪ್ಪುತ್ತಾರೆಯೇ ನೋಡಿ."], tod:["ಸತ್ಯ ಅಥವಾ ಸವಾಲು 😈","ಸತ್ಯ ಅಥವಾ ಸವಾಲು ಆಯ್ಕೆ ಮಾಡಿ. ಪ್ರತಿ ರೌಂಡ್‌ಗೆ ಹೊಸ ಪ್ರಶ್ನೆ, ಪುನರಾವರ್ತನೆ ಇಲ್ಲ."], sound:["ಮೀಮ್ ಸೌಂಡ್‌ಬೋರ್ಡ್","ಯಾವುದೇ ಧ್ವನಿಯ ಮೇಲೆ ಟ್ಯಾಪ್ ಮಾಡಿ ಮತ್ತು ಮಜಾ ಮಾಡಿ."], quotes:["ಇಂದಿನ ಮೀಮ್ ಕೋಟ್","ಯಾದೃಚ್ಛಿಕ ಮಜಾದಾಯಕ ಸಾಲಿಗಾಗಿ ಟ್ಯಾಪ್ ಮಾಡಿ."] } },
+
+  mr: { play:"खेळा", heroTitle:"तुमचा रोजचा मजेचा डोस 🚀", heroLead:"मित्रांना रोस्ट करा, तुमची मीम पर्सनॅलिटी शोधा आणि मज्जा शेअर करा.", startPlaying:"खेळायला सुरुवात करा", whatsapp:"WhatsApp", copyLink:"लिंक कॉपी करा", pickVibe:"तुमचा मूड निवडा", builtShare:"इथला प्रत्येक खेळ शेअर करण्यासाठी बनवला आहे.", about:"आमच्याबद्दल", contact:"संपर्क", privacy:"गोपनीयता धोरण", terms:"अटी", rights:"© 2026 MemeVerse. सर्व हक्क राखीव.",
+    roastBtn:"रोस्ट करा 🔥", roastPh:"एक नाव लिहा...", enterName:"आधी नाव लिहा 😈", roastLevel:"रोस्ट लेव्हल", startQuiz:"क्विझ सुरू करा ▶", question:"प्रश्न", of:"पैकी", personalityIs:"तुमची मीम पर्सनॅलिटी आहे", retake:"पुन्हा खेळा", tapBtn:"बटण दाबा!", next:"पुढे ▶", newQ:"नवीन प्रश्न ▶", tapNewQ:"सुरू करण्यासाठी \"नवीन प्रश्न\" दाबा!", wyrQ:"तुम्ही काय निवडाल…", youChoose:"तुम्ही निवडले", nextQ:"पुढचा प्रश्न ▶", pickPoison:"तुमची निवड करा 😈", truth:"सत्य 🤔", dare:"धाडस 🔥", truthLabel:"सत्य", dareLabel:"धाडस", nextRound:"पुढची फेरी 🎲", linkCopied:"लिंक कॉपी झाली! मित्रांना पाठवा 🔥", soundMissing:"साउंड फाइल अजून सापडली नाही 🔇", wrongPass:"चुकीचा पासवर्ड ❌", adminOn:"ॲडमिन मोड चालू ✨",
+    f:{ roast:["AI रोस्ट जनरेटर","नाव टाका आणि रोस्ट लेव्हल स्कोअरसह भन्नाट रोस्ट मिळवा."], quiz:["मीम पर्सनॅलिटी क्विझ","तीन छोटे प्रश्न. तुम्ही कोणता मीम आहात ते शोधा."], wyr:["तुम्ही काय निवडाल","एक बाजू निवडा, शेअर करा आणि मित्र सहमत आहेत का ते पहा."], tod:["सत्य की धाडस 😈","सत्य किंवा धाडस निवडा. प्रत्येक फेरीत नवीन प्रश्न किंवा टास्क, पुनरावृत्ती नाही."], sound:["मीम साउंडबोर्ड","एखाद्या आवाजावर टॅप करा आणि मज्जा करा."], quotes:["आजचा मीम कोट","यादृच्छिक मजेदार ओळीसाठी टॅप करा."] } },
+
+  te: { play:"ఆడండి", heroTitle:"మీ రోజువారీ సరదా డోస్ 🚀", heroLead:"స్నేహితులను రోస్ట్ చేయండి, మీ మీమ్ పర్సనాలిటీ తెలుసుకోండి, సరదా షేర్ చేయండి.", startPlaying:"ఆడటం ప్రారంభించండి", whatsapp:"WhatsApp", copyLink:"లింక్ కాపీ చేయండి", pickVibe:"మీ వైబ్ ఎంచుకోండి", builtShare:"ఇక్కడ ప్రతి ఆట షేర్ చేయడానికే రూపొందించబడింది.", about:"మా గురించి", contact:"సంప్రదించండి", privacy:"గోప్యతా విధానం", terms:"నిబంధనలు", rights:"© 2026 MemeVerse. అన్ని హక్కులు ప్రత్యేకించబడ్డాయి.",
+    roastBtn:"రోస్ట్ చేయండి 🔥", roastPh:"ఒక పేరు రాయండి...", enterName:"ముందు పేరు రాయండి 😈", roastLevel:"రోస్ట్ స్థాయి", startQuiz:"క్విజ్ ప్రారంభించండి ▶", question:"ప్రశ్న", of:"లో", personalityIs:"మీ మీమ్ పర్సనాలిటీ", retake:"మళ్లీ ఆడండి", tapBtn:"బటన్ నొక్కండి!", next:"తదుపరి ▶", newQ:"కొత్త ప్రశ్న ▶", tapNewQ:"ప్రారంభించడానికి \"కొత్త ప్రశ్న\" నొక్కండి!", wyrQ:"మీరు ఏది ఎంచుకుంటారు…", youChoose:"మీరు ఎంచుకున్నది", nextQ:"తదుపరి ప్రశ్న ▶", pickPoison:"మీ ఎంపిక చేయండి 😈", truth:"నిజం 🤔", dare:"సాహసం 🔥", truthLabel:"నిజం", dareLabel:"సాహసం", nextRound:"తదుపరి రౌండ్ 🎲", linkCopied:"లింక్ కాపీ అయింది! స్నేహితులకు పంపండి 🔥", soundMissing:"సౌండ్ ఫైల్ ఇంకా దొరకలేదు 🔇", wrongPass:"తప్పు పాస్‌వర్డ్ ❌", adminOn:"అడ్మిన్ మోడ్ ఆన్ ✨",
+    f:{ roast:["AI రోస్ట్ జనరేటర్","పేరు టైప్ చేసి రోస్ట్ స్థాయి స్కోర్‌తో ఘాటైన రోస్ట్ పొందండి."], quiz:["మీమ్ పర్సనాలిటీ క్విజ్","మూడు చిన్న ప్రశ్నలు. మీరు ఏ మీమ్ అని తెలుసుకోండి."], wyr:["మీరు ఏది ఎంచుకుంటారు","ఒక వైపు ఎంచుకోండి, షేర్ చేయండి, స్నేహితులు అంగీకరిస్తారో చూడండి."], tod:["నిజం లేదా సాహసం 😈","నిజం లేదా సాహసం ఎంచుకోండి. ప్రతి రౌండ్‌కు కొత్త ప్రశ్న లేదా టాస్క్, పునరావృతం లేదు."], sound:["మీమ్ సౌండ్‌బోర్డ్","ఏదైనా సౌండ్ మీద ట్యాప్ చేసి సరదాగా ఉండండి."], quotes:["ఈ రోజు మీమ్ కోట్","యాదృచ్ఛిక సరదా లైన్ కోసం ట్యాప్ చేయండి."] } }
+};
+
+/* Extra strings for the vibe meter and chaos mode */
+const EXTRA = {
+  en:{chaos:"Chaos Mode 🌪️", vibeTitle:"How's your vibe today?", vibeMost:"Most picked:", vibeNone:"Pick one, be honest 👀"},
+  hi:{chaos:"चाओस मोड 🌪️", vibeTitle:"आज आपका मूड कैसा है?", vibeMost:"सबसे ज़्यादा चुना गया:", vibeNone:"कोई एक चुनो, ईमानदारी से 👀"},
+  hinglish:{chaos:"Chaos Mode 🌪️", vibeTitle:"Aaj ka vibe kaisa hai?", vibeMost:"Sabse zyada pick:", vibeNone:"Ek chuno, honestly 👀"},
+  kn:{chaos:"ಚಾಓಸ್ ಮೋಡ್ 🌪️", vibeTitle:"ಇಂದು ನಿಮ್ಮ ಮೂಡ್ ಹೇಗಿದೆ?", vibeMost:"ಹೆಚ್ಚು ಆರಿಸಿದ್ದು:", vibeNone:"ಒಂದನ್ನು ಆರಿಸಿ, ಪ್ರಾಮಾಣಿಕವಾಗಿ 👀"},
+  mr:{chaos:"केओस मोड 🌪️", vibeTitle:"आज तुमचा मूड कसा आहे?", vibeMost:"सर्वाधिक निवडले:", vibeNone:"एक निवडा, प्रामाणिकपणे 👀"},
+  te:{chaos:"ఛావోస్ మోడ్ 🌪️", vibeTitle:"ఈ రోజు మీ మూడ్ ఎలా ఉంది?", vibeMost:"ఎక్కువ ఎంచుకున్నది:", vibeNone:"ఒకటి ఎంచుకోండి, నిజాయితీగా 👀"}
+};
+for (const l in EXTRA) Object.assign(I18N[l], EXTRA[l]);
+
+/* Fallback feature content (used only if features.json can't load, e.g. opening the file directly) */
+const FALLBACK_FEATURES = [
+  { id:"roast", type:"roast", title:"AI Roast Generator", icon:"fa-fire", color:"pink", desc:"Type a name and get a savage roast with a Roast Level score.",
+    items:[ { title:"The Professional Scroller", text:"You spend 12 hours on your phone and still say you're busy." }, { title:"The Silent Listener", text:"You read every message in the group and never reply. Agent 007?" }, { title:"The Midnight Chef", text:"Your 2 AM Maggi skills are unmatched." } ] },
+  { id:"quiz", type:"quiz", title:"Meme Personality Quiz", icon:"fa-brain", color:"cyan", desc:"Three quick questions. Find out which meme you really are.",
+    questions:[ { q:"Your friends are planning a trip. You...", options:[ {text:"Book everything and make a group itinerary", tag:"boss"}, {text:"Say 'I'm in!' and then sleep through the alarm", tag:"chaos"}, {text:"Bring snacks and watch everyone argue", tag:"observer"} ] } ],
+    results:{ boss:{title:"The Main Character 👑", text:"You plan, you lead, and you're the reason the group works."}, chaos:{title:"The Chaos Gremlin 💥", text:"You make plans, break plans, and still end up with a legendary story."}, observer:{title:"The Silent Observer 👀", text:"You see everything, say nothing, then drop the one line that wins the chat."} } },
+  { id:"wyr", type:"wyr", title:"Would You Rather", icon:"fa-scale-balanced", color:"pink", desc:"Pick a side, share it, and see if your friends agree.",
+    items:[ {a:"Read minds", b:"Teleport anywhere"}, {a:"Eat only pizza forever", b:"Eat only noodles forever"} ] },
+  { id:"tod", type:"tod", title:"Truth or Dare 😈", icon:"fa-dice", color:"gold", desc:"Pick Truth or Dare. Every round is a new question or task, so no repeats.",
+    truths:[ "What's the last thing you searched at 2 AM?", "Which emoji do you use way too much?" ],
+    dares:[ "Send a 'Good morning' voice note to the group, right now." ],
+    dareTemplates:[ "Talk in a {accent} accent for the next {minutes} minutes." ],
+    fill:{ accent:["Pirate","Robot","Shakespearean"], minutes:["3","5"] } },
+  { id:"sound", type:"sound", title:"Meme Soundboard", icon:"fa-volume-high", color:"cyan", desc:"Tap a sound and let the chaos speak for you.",
+    items:[ {label:"🔊 Bruh", src:"sounds/bruh.wav"}, {label:"💥 Emotional Damage", src:"sounds/emotional-damage.wav"}, {label:"😂 Laugh Track", src:"sounds/laugh-track.wav"}, {label:"🎉 Victory Horn", src:"sounds/victory-horn.wav"} ] },
+  { id:"quotes", type:"card", title:"Meme Quote of the Day", icon:"fa-quote-left", color:"lime", desc:"Tap for a random line made for sharing.",
+    items:[ "Monday mood: just five more minutes of being a potato.", "I have a plan. I just haven't started the plan.", "Battery at 1%, but attitude at 100%." ] }
+];
+
+/* ================= State & helpers ================= */
+const STORAGE_KEY = "memeverse_custom_features";
+const LANG_KEY = "memeverse_lang";
+const TOD_KEY = "memeverse_tod_used_v1";
+const COLORS = { pink:"#ff2d95", cyan:"#22d3ee", gold:"#facc15", lime:"#a3e635", warning:"#facc15", info:"#22d3ee", danger:"#ff2d95", success:"#a3e635" };
+let features = [];
+let lang = "en";
+const quizState = {};
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+const SITE_URL = (location.protocol.startsWith("http") ? location.href.split("#")[0] : "https://visionvfxforge-hub.github.io/Memeverse/");
+const colorOf = c => COLORS[c] || COLORS.pink;
+
+function t(key) { return (I18N[lang] && I18N[lang][key]) || I18N.en[key] || key; }
+function featText(f, idx) {
+  if (f.custom) return f[idx === 0 ? "title" : "desc"];
+  const tr = I18N[lang] && I18N[lang].f && I18N[lang].f[f.id];
+  return tr ? tr[idx] : f[idx === 0 ? "title" : "desc"];
+}
+
+function detectLang() {
+  const saved = localStorage.getItem(LANG_KEY);
+  if (saved && I18N[saved]) return saved;
+  const nav = (navigator.language || "en").toLowerCase();
+  if (nav.startsWith("hi")) return "hi";
+  if (nav.startsWith("kn")) return "kn";
+  if (nav.startsWith("mr")) return "mr";
+  if (nav.startsWith("te")) return "te";
+  return "en";
+}
+function applyStaticText() {
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const v = I18N[lang][el.dataset.i18n] || I18N.en[el.dataset.i18n];
+    if (v) el.textContent = v;
+  });
+  document.documentElement.lang = lang === "hinglish" ? "hi-Latn" : lang;
+  document.getElementById("lang").value = lang;
+  renderVibe();
+}
+function setLang(l) {
+  lang = I18N[l] ? l : "en";
+  try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+  applyStaticText();
+  render();
+  renderTicker();
+  observeReveal();
+}
+
+function toast(msg) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => el.classList.remove("show"), 2200);
+}
+function burst(x, y) {
+  ["🎉","🔥","💥","😂","⚡","✨"].forEach((emoji, i) => {
+    const el = document.createElement("div");
+    el.className = "burst";
+    el.textContent = emoji;
+    el.style.left = (x + (i - 3) * 22) + "px";
+    el.style.top = (y - 10) + "px";
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 1000);
+  });
+}
+function loadCustom() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch (e) { return []; } }
+function saveCustom(list) { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); } catch (e) {} }
+function openShare(text) { window.open("https://wa.me/?text=" + encodeURIComponent(text + " " + SITE_URL), "_blank"); }
+function shareLinks(text) {
+  const u = encodeURIComponent(text + " " + SITE_URL);
+  return `<a class="share-pill me-2" href="https://wa.me/?text=${u}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> ${t("whatsapp")}</a>
+          <a class="share-pill" href="https://twitter.com/intent/tweet?text=${u}" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i> X</a>
+          <button class="share-pill ms-2" data-action="img" data-body="${esc(text)}">${esc(t("saveImg"))}</button>`;
+}
+
+async function init() {
+  let base = FALLBACK_FEATURES;
+  try { const r = await fetch("features.json", { cache: "no-store" }); if (r.ok) base = await r.json(); } catch (e) {}
+  features = [...base, ...loadCustom()];
+  lang = detectLang();
+  applyStaticText();
+  render();
+  renderTicker();
+  renderCustomList();
+  observeReveal();
+  renderScore();
+  const p = new URLSearchParams(location.search).get("roast");
+  if (p) {
+    const first = document.querySelector('[id^="in-"]');
+    if (first) { first.value = p; }
+    toast(t("roastedYou"));
+    document.getElementById("features").scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+/* ================= Rendering ================= */
+function cardHtml(f, i) {
+  const id = esc(f.id), c = colorOf(f.color), delay = (i % 3) * 0.1;
+  const [title, desc] = [featText(f, 0), featText(f, 1)];
+  let body = "";
+  if (f.type === "roast") {
+    body = `<div class="mb-3"><input id="in-${id}" class="form-control" placeholder="${esc(t("roastPh"))}"></div>
+      <button class="btn btn-grad w-100" data-action="roast" data-id="${id}">${esc(t("roastBtn"))}</button>
+      <div id="out-${id}"></div>`;
+  } else if (f.type === "quiz") {
+    body = `<div id="out-${id}"><button class="btn btn-grad w-100" data-action="quiz-start" data-id="${id}">${esc(t("startQuiz"))}</button></div>`;
+  } else if (f.type === "wyr") {
+    body = `<div id="out-${id}" class="output-box">${esc(t("tapNewQ"))}</div>
+      <button class="btn btn-grad w-100" data-action="wyr-next" data-id="${id}">${esc(t("newQ"))}</button>`;
+  } else if (f.type === "tod") {
+    body = `<div id="out-${id}" class="output-box">${esc(t("pickPoison"))}</div>
+      <div class="row g-2">
+        <div class="col-6"><button class="btn btn-outline-light w-100 rounded-pill fw-bold" data-action="tod-pick" data-kind="truth" data-id="${id}">${esc(t("truth"))}</button></div>
+        <div class="col-6"><button class="btn btn-grad w-100" data-action="tod-pick" data-kind="dare" data-id="${id}">${esc(t("dare"))}</button></div>
+      </div>`;
+  } else if (f.type === "sound") {
+    body = `<div class="row g-3">${(f.items || []).map((s, k) =>
+      `<div class="col-6 col-md-3"><button class="sound-btn" data-action="sound" data-id="${id}" data-i="${k}">${esc(s.label)}</button></div>`).join("")}</div>`;
+  } else {
+    body = `<div id="out-${id}" class="output-box">${esc(t("tapBtn"))}</div>
+      <button class="btn btn-grad w-100" data-action="card" data-id="${id}">${esc(t("next"))}</button>`;
+  }
+  return `<div class="col-lg-6 reveal" style="transition-delay:${delay}s">
+    <div class="glass">
+      <span class="feat-icon" style="background:linear-gradient(135deg,${c},var(--violet))"><i class="fa-solid ${esc(f.icon || "fa-star")}"></i></span>
+      <h3 class="feat-title">${esc(title)}${f.custom ? '<span class="badge-new">NEW</span>' : ""}</h3>
+      <p style="color:rgba(255,255,255,.75)">${esc(desc || "")}</p>
+      ${body}
+    </div></div>`;
+}
+function render() {
+  document.getElementById("features").innerHTML = features.map(cardHtml).join("");
+}
+function renderTicker() {
+  const quotes = features.filter(f => f.type === "card").flatMap(f => f.items || []);
+  const text = (quotes.length ? quotes : ["MemeVerse 🔥"]).map(q => `<span>${esc(q)}</span><span>✦</span>`).join("");
+  document.getElementById("ticker").innerHTML = text + text;
+}
+function observeReveal() {
+  const io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }), { threshold: .12 });
+  document.querySelectorAll(".reveal:not(.in)").forEach(el => io.observe(el));
+}
+
+/* ================= Quiz ================= */
+function renderQuiz(f) {
+  const s = quizState[f.id];
+  const out = document.getElementById("out-" + f.id);
+  const qs = f.questions || [];
+  if (s.step < qs.length) {
+    const q = qs[s.step];
+    out.innerHTML = `<p class="small" style="color:rgba(255,255,255,.6)">${esc(t("question"))} ${s.step + 1} ${esc(t("of"))} ${qs.length}</p>
+      <p class="fs-5 fw-bold mb-3">${esc(q.q)}</p>
+      ${q.options.map(o => `<button class="choice" data-action="quiz-answer" data-id="${esc(f.id)}" data-tag="${esc(o.tag)}">${esc(o.text)}</button>`).join("")}`;
+  } else {
+    const winner = Object.entries(s.tags).sort((a, b) => b[1] - a[1])[0]?.[0];
+    const r = (f.results || {})[winner] || { title: "Mystery Meme", text: "Too mysterious to categorize." };
+    out.innerHTML = `<div class="result-box text-center">
+      <p class="small mb-1" style="color:var(--gold)">${esc(t("personalityIs"))}</p>
+      <h4 class="fw-bold">${esc(r.title)}</h4>
+      <p class="my-3">${esc(r.text)}</p>
+      <div class="mb-3">${shareLinks("My MemeVerse personality is: " + r.title + ". What's yours?")}</div>
+      <button class="btn btn-outline-light btn-sm rounded-pill" data-action="quiz-start" data-id="${esc(f.id)}">${esc(t("retake"))}</button></div>`;
+    const rect = out.getBoundingClientRect();
+    burst(rect.left + rect.width / 2, rect.top);
+  }
+}
+
+/* ================= Truth or Dare: varied, no-repeat generator ================= */
+function fillTpl(tpl, fill) { return tpl.replace(/\{(\w+)\}/g, (_, k) => pick((fill && fill[k]) || [k])); }
+function todCandidate(f, kind) {
+  if (kind === "truth") return pick(f.truths || ["Tell us something nobody knows about you."]);
+  if (Math.random() < 0.3 && f.dares && f.dares.length) return pick(f.dares);
+  return fillTpl(pick(f.dareTemplates || ["Do a silly dance for 10 seconds."]), f.fill);
+}
+function todNext(f, kind) {
+  let used = [];
+  try { used = JSON.parse(localStorage.getItem(TOD_KEY)) || []; } catch (e) {}
+  const seen = new Set(used);
+  let text = "", tries = 0;
+  do { text = todCandidate(f, kind); tries++; } while (seen.has(text) && tries < 200);
+  if (seen.has(text)) seen.clear();
+  seen.add(text);
+  try { localStorage.setItem(TOD_KEY, JSON.stringify([...seen].slice(-500))); } catch (e) {}
+  return text;
+}
+
+/* ================= Shareable image cards (canvas, no server needed) ================= */
+function wrapText(ctx, text, maxWidth) {
+  const words = String(text).split(/\s+/), lines = [];
+  let line = "";
+  words.forEach(w => {
+    const test = line ? line + " " + w : w;
+    if (ctx.measureText(test).width > maxWidth && line) { lines.push(line); line = w; }
+    else line = test;
+  });
+  if (line) lines.push(line);
+  return lines;
+}
+function makeImage(text) {
+  const size = 1080, c = document.createElement("canvas");
+  c.width = size; c.height = size;
+  const x = c.getContext("2d");
+  const g = x.createLinearGradient(0, 0, size, size);
+  g.addColorStop(0, "#7c3aed"); g.addColorStop(1, "#ff2d95");
+  x.fillStyle = g; x.fillRect(0, 0, size, size);
+  x.textAlign = "center"; x.fillStyle = "#fff";
+  x.font = "bold 64px sans-serif";
+  x.fillText("🔥 MemeVerse", size / 2, 130);
+  x.font = "bold 58px sans-serif";
+  const lines = wrapText(x, text, size - 160);
+  const lh = 80, startY = size / 2 - (lines.length * lh) / 2 + 40;
+  lines.slice(0, 10).forEach((l, i) => x.fillText(l, size / 2, startY + i * lh));
+  x.font = "bold 36px sans-serif";
+  x.fillStyle = "rgba(255,255,255,.85)";
+  x.fillText(SITE_URL.replace(/^https?:\/\//, ""), size / 2, size - 80);
+  return c;
+}
+function saveOrShareImage(text) {
+  makeImage(text).toBlob(blob => {
+    if (!blob) return toast("⚠️");
+    const file = new File([blob], "memeverse.png", { type: "image/png" });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      navigator.share({ files: [file], text: SITE_URL }).catch(() => {});
+    } else {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "memeverse.png";
+      a.click();
+      toast(t("imgSaved"));
+    }
+  }, "image/png");
+}
+
+/* ================= Actions ================= */
+document.body.addEventListener("click", e => {
+  const btn = e.target.closest("[data-action]");
+  if (!btn) return;
+  const act = btn.dataset.action;
+
+  if (act === "share-wa") return openShare("Check out MemeVerse, the funniest corner of the internet 🔥");
+  if (act === "share-x") return window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent("MemeVerse 🔥 " + SITE_URL), "_blank");
+  if (act === "copy-link") {
+    (navigator.clipboard ? navigator.clipboard.writeText(SITE_URL) : Promise.reject())
+      .then(() => toast(t("linkCopied")))
+      .catch(() => toast(SITE_URL));
+    return;
+  }
+
+  if (act === "img") return saveOrShareImage(btn.dataset.body);
+
+  const f = features.find(x => x.id === btn.dataset.id);
+  if (!f) return;
+
+  if (act === "roast") {
+    const name = document.getElementById("in-" + f.id).value.trim();
+    if (!name) return toast(t("enterName"));
+    const r = pick(f.items || []);
+    if (!r) return;
+    const level = 60 + Math.floor(Math.random() * 41);
+    document.getElementById("out-" + f.id).innerHTML = `<div class="result-box text-center">
+      <h4 class="fw-bold" style="color:var(--cyan)">${esc(name)} – ${esc(r.title)}</h4>
+      <p class="fs-5 my-3">"${esc(r.text)}"</p>
+      <p class="fw-bold mb-3" style="color:var(--gold)">${esc(t("roastLevel"))}: ${level}/100 🔥</p>
+      <div>${shareLinks(`${name} got roasted on MemeVerse: "${r.title}" | Roast Level ${level}/100 🔥`)}</div>
+      <button class="btn btn-outline-light btn-sm rounded-pill mt-3" data-action="challenge" data-name="${esc(name)}">${esc(t("challengeFriend"))}</button></div>`;
+    addScore(10);
+  }
+
+  if (act === "challenge") {
+    const url = SITE_URL.split("?")[0] + "?roast=" + encodeURIComponent(btn.dataset.name);
+    window.open("https://wa.me/?text=" + encodeURIComponent(`${btn.dataset.name}, your roast is ready 😈 Tap here: ${url}`), "_blank");
+    return;
+  }
+  if (act === "score-share") return saveOrShareImage(`${t("beatMe")} ⭐ ${getScore()}`);
+
+  if (act === "quiz-start") { quizState[f.id] = { step: 0, tags: {} }; renderQuiz(f); }
+  if (act === "quiz-answer") {
+    const s = quizState[f.id];
+    s.tags[btn.dataset.tag] = (s.tags[btn.dataset.tag] || 0) + 1;
+    s.step++;
+    if (s.step === (f.questions || []).length) addScore(20);
+    renderQuiz(f);
+  }
+
+  if (act === "wyr-next" || act === "wyr-pick") {
+    const out = document.getElementById("out-" + f.id);
+    if (act === "wyr-next") {
+      const q = pick(f.items || []);
+      if (!q) return;
+      out.dataset.q = JSON.stringify(q);
+      out.innerHTML = `<p class="fs-5 fw-bold mb-3">${esc(t("wyrQ"))}</p>
+        <button class="choice" data-action="wyr-pick" data-id="${esc(f.id)}" data-side="a">${esc(q.a)}</button>
+        <button class="choice" data-action="wyr-pick" data-id="${esc(f.id)}" data-side="b">${esc(q.b)}</button>`;
+    } else {
+      const q = JSON.parse(out.dataset.q);
+      const picked = btn.dataset.side === "a" ? q.a : q.b;
+      addScore(5);
+      out.innerHTML = `<div class="result-box text-center">
+        <p class="small mb-1" style="color:var(--gold)">${esc(t("youChoose"))}</p>
+        <h4 class="fw-bold">${esc(picked)}</h4>
+        <p class="my-3">Would you rather ${esc(q.a)} or ${esc(q.b)}?</p>
+        <div class="mb-3">${shareLinks("Would you rather " + q.a + " or " + q.b + "? I picked: " + picked + " 😂")}</div>
+        <button class="btn btn-outline-light btn-sm rounded-pill" data-action="wyr-next" data-id="${esc(f.id)}">${esc(t("nextQ"))}</button></div>`;
+    }
+    return;
+  }
+
+  if (act === "tod-pick") {
+    const kind = btn.dataset.kind;
+    const text = todNext(f, kind);
+    addScore(15);
+    document.getElementById("out-" + f.id).innerHTML = `<div class="result-box text-center">
+      <p class="small mb-1" style="color:var(--gold)">${kind === "truth" ? esc(t("truthLabel")) : esc(t("dareLabel"))}</p>
+      <p class="fs-5 fw-bold my-3">${esc(text)}</p>
+      <div class="mb-3">${shareLinks("Truth or Dare on MemeVerse: " + text)}</div>
+      <button class="btn btn-grad btn-sm rounded-pill px-4" data-action="tod-pick" data-kind="${kind}" data-id="${esc(f.id)}">${esc(t("nextRound"))}</button></div>`;
+    return;
+  }
+
+  if (act === "sound") {
+    const s = (f.items || [])[Number(btn.dataset.i)];
+    if (!s) return;
+    if (s.src) new Audio(s.src).play().catch(() => toast(t("soundMissing")));
+    else toast(`${s.label} 🔊`);
+  }
+
+  if (act === "card") {
+    document.getElementById("out-" + f.id).innerText = pick(f.items || ["…"]);
+  }
+});
+
+document.getElementById("lang").addEventListener("change", e => setLang(e.target.value));
+
+/* ================= Owner-only access ================= */
+// SHA-256 hash of the owner password. Setup steps are in README.md.
+const ADMIN_HASH = "PASTE_HASH_HERE";
+async function sha256(text) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+}
+let isAdmin = false;
+async function tryUnlock() {
+  if (location.hash !== "#admin" || isAdmin) return;
+  const pass = prompt("Owner password:");
+  if (pass === null) return;
+  const hash = await sha256(pass);
+  if (ADMIN_HASH === "PASTE_HASH_HERE" || hash !== ADMIN_HASH) { toast(t("wrongPass")); return; }
+  isAdmin = true;
+  document.getElementById("admin-btn").classList.remove("d-none");
+  toast(t("adminOn"));
+}
+window.addEventListener("hashchange", tryUnlock);
+
+/* ================= Feature Studio (owner only) ================= */
+const typeHints = { roast:"One per line: Title | Text", card:"One item per line", sound:"One per line: Label | audio-file-url" };
+const typeEl = document.getElementById("f-type");
+function updateHint() { document.getElementById("f-hint").innerText = "– " + typeHints[typeEl.value]; }
+typeEl.addEventListener("change", updateHint);
+updateHint();
+
+function parseItems(type, raw) {
+  const lines = raw.split("\n").map(l => l.trim()).filter(Boolean);
+  if (type === "roast") return lines.map(l => { const [ti, ...rest] = l.split("|"); return { title: ti.trim(), text: rest.join("|").trim() }; });
+  if (type === "sound") return lines.map(l => { const [label, ...rest] = l.split("|"); return { label: label.trim(), src: rest.join("|").trim() }; });
+  if (type === "card") return lines;
+  return [];
+}
+document.getElementById("f-save").addEventListener("click", () => {
+  if (!isAdmin) return toast(t("wrongPass"));
+  const title = document.getElementById("f-title").value.trim();
+  if (!title) return toast("Enter a title first");
+  const type = typeEl.value;
+  const items = parseItems(type, document.getElementById("f-items").value);
+  if (items.length === 0) return toast("Add at least one item");
+  const feature = {
+    id: "c-" + Date.now(), custom: true, type, title,
+    desc: document.getElementById("f-desc").value.trim(),
+    icon: type === "roast" ? "fa-fire" : type === "sound" ? "fa-volume-high" : "fa-star",
+    color: document.getElementById("f-color").value,
+    items
+  };
+  const list = loadCustom();
+  list.push(feature);
+  saveCustom(list);
+  features.push(feature);
+  render(); renderTicker(); renderCustomList(); observeReveal();
+  ["f-title", "f-desc", "f-items"].forEach(id => document.getElementById(id).value = "");
+  bootstrap.Modal.getInstance(document.getElementById("adminModal")).hide();
+  document.getElementById("features").scrollIntoView({ behavior: "smooth" });
+  toast("Feature is live in preview ✨");
+});
+function renderCustomList() {
+  const list = loadCustom();
+  const box = document.getElementById("custom-list");
+  if (!list.length) { box.innerHTML = `<span style="color:rgba(255,255,255,.6)">No custom features yet.</span>`; return; }
+  box.innerHTML = list.map(f => `<div class="d-flex justify-content-between align-items-center py-1" style="border-bottom:1px solid var(--line)">
+    <span>${esc(f.title)} <span style="color:rgba(255,255,255,.6)">(${esc(f.type)})</span></span>
+    <button class="btn btn-outline-danger btn-sm rounded-pill" data-del="${esc(f.id)}">Delete</button></div>`).join("");
+}
+document.getElementById("custom-list").addEventListener("click", e => {
+  const id = e.target.dataset.del;
+  if (!id || !isAdmin) return;
+  saveCustom(loadCustom().filter(f => f.id !== id));
+  features = features.filter(f => f.id !== id);
+  render(); renderTicker(); renderCustomList(); observeReveal();
+});
+document.getElementById("btn-export").addEventListener("click", () => {
+  if (!isAdmin) return;
+  document.getElementById("io").value = JSON.stringify(loadCustom().map(({ custom, ...rest }) => rest), null, 2);
+});
+
+const EXTRA2 = {
+  en:{saveImg:"Make image 🖼️", imgSaved:"Image ready! Post it everywhere 🔥"},
+  hi:{saveImg:"इमेज बनाओ 🖼️", imgSaved:"इमेज तैयार है! हर जगह पोस्ट करो 🔥"},
+  hinglish:{saveImg:"Image banao 🖼️", imgSaved:"Image ready hai! Sab jagah post karo 🔥"},
+  kn:{saveImg:"ಚಿತ್ರ ಮಾಡಿ 🖼️", imgSaved:"ಚಿತ್ರ ಸಿದ್ಧ! ಎಲ್ಲೆಡೆ ಹಂಚಿಕೊಳ್ಳಿ 🔥"},
+  mr:{saveImg:"प्रतिमा बनवा 🖼️", imgSaved:"प्रतिमा तयार! सगळीकडे शेअर करा 🔥"},
+  te:{saveImg:"చిత్రం చేయండి 🖼️", imgSaved:"చిత్రం సిద్ధం! అన్ని చోట్లా షేర్ చేయండి 🔥"}
+};
+for (const l in EXTRA2) Object.assign(I18N[l], EXTRA2[l]);
+
+const EXTRA3 = {
+  en:{scoreShare:"Share my score", challengeFriend:"Send to a friend 😈", roastedYou:"Someone roasted you! Tap Roast Them 👀", beatMe:"Beat my Chaos Score! 🔥"},
+  hi:{scoreShare:"मेरा स्कोर शेयर करो", challengeFriend:"दोस्त को भेजो 😈", roastedYou:"किसी ने तुम्हें रोस्ट किया! 'रोस्ट करो' दबाओ 👀", beatMe:"मेरा चाओस स्कोर तोड़ के दिखाओ! 🔥"},
+  hinglish:{scoreShare:"Score share karo", challengeFriend:"Dost ko bhejo 😈", roastedYou:"Kisi ne tumhe roast kiya! Roast Karo dabao 👀", beatMe:"Mera Chaos Score todo! 🔥"},
+  kn:{scoreShare:"ನನ್ನ ಸ್ಕೋರ್ ಹಂಚಿಕೊಳ್ಳಿ", challengeFriend:"ಸ್ನೇಹಿತರಿಗೆ ಕಳುಹಿಸಿ 😈", roastedYou:"ಯಾರೋ ನಿಮ್ಮನ್ನು ರೋಸ್ಟ್ ಮಾಡಿದ್ದಾರೆ! ರೋಸ್ಟ್ ಮಾಡಿ ಒತ್ತಿ 👀", beatMe:"ನನ್ನ ಚಾಓಸ್ ಸ್ಕೋರ್ ಮೀರಿಸಿ! 🔥"},
+  mr:{scoreShare:"माझा स्कोअर शेअर करा", challengeFriend:"मित्राला पाठवा 😈", roastedYou:"कोणीतरी तुम्हाला रोस्ट केलं! 'रोस्ट करा' दाबा 👀", beatMe:"माझा केओस स्कोअर मोडून दाखवा! 🔥"},
+  te:{scoreShare:"నా స్కోర్ షేర్ చేయండి", challengeFriend:"స్నేహితుడికి పంపండి 😈", roastedYou:"ఎవరో మిమ్మల్ని రోస్ట్ చేశారు! 'రోస్ట్ చేయండి' నొక్కండి 👀", beatMe:"నా ఛావోస్ స్కోర్‌ను అధిగమించండి! 🔥"}
+};
+for (const l in EXTRA3) Object.assign(I18N[l], EXTRA3[l]);
+
+/* ================= Chaos Score (local, per visitor) ================= */
+const SCORE_KEY = "memeverse_score";
+function getScore() { return Number(localStorage.getItem(SCORE_KEY) || 0); }
+function addScore(n) {
+  try { localStorage.setItem(SCORE_KEY, getScore() + n); } catch (e) {}
+  renderScore();
+}
+function renderScore() {
+  const el = document.getElementById("score");
+  if (el) el.textContent = "⭐ " + getScore();
+}
+document.getElementById("score").addEventListener("click", () => {
+  if (getScore() === 0) return toast("⭐ 0");
+  saveOrShareImage(`${t("beatMe")} ⭐ ${getScore()}`);
+});
+
+/* ================= Vibe meter (local, per visitor) ================= */
+const VIBE_KEY = "memeverse_vibe";
+const VIBES = ["😂","🔥","💀","🤡","😴"];
+function vibeCounts() { try { return JSON.parse(localStorage.getItem(VIBE_KEY)) || {}; } catch (e) { return {}; } }
+function renderVibe() {
+  const el = document.getElementById("vibe");
+  if (!el) return;
+  const c = vibeCounts();
+  el.innerHTML = VIBES.map(v => `<button class="vibe-btn" data-vibe="${v}">${v}<div style="font-size:.7rem;color:rgba(255,255,255,.7)">${c[v] || 0}</div></button>`).join("");
+  const top = Object.entries(c).sort((a, b) => b[1] - a[1])[0];
+  document.getElementById("vibe-most").textContent = top && top[1] > 0 ? `${t("vibeMost")} ${top[0]} (${top[1]})` : t("vibeNone");
+}
+document.getElementById("vibe").addEventListener("click", e => {
+  const b = e.target.closest("[data-vibe]");
+  if (!b) return;
+  const c = vibeCounts();
+  c[b.dataset.vibe] = (c[b.dataset.vibe] || 0) + 1;
+  try { localStorage.setItem(VIBE_KEY, JSON.stringify(c)); } catch (err) {}
+  const r = b.getBoundingClientRect();
+  burst(r.left + r.width / 2, r.top);
+  renderVibe();
+});
+
+/* ================= Chaos mode: emoji rain + random quote ================= */
+function rain() {
+  const emojis = ["😂","🔥","💀","🤡","⚡","🎉","🗿","😭","🚀"];
+  for (let i = 0; i < 45; i++) {
+    const el = document.createElement("div");
+    el.className = "rain";
+    el.textContent = pick(emojis);
+    el.style.left = (Math.random() * 100) + "vw";
+    el.style.animationDuration = (2 + Math.random() * 2.5) + "s";
+    el.style.animationDelay = (Math.random() * 1.2) + "s";
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 5000);
+  }
+}
+document.getElementById("chaos").addEventListener("click", () => {
+  rain();
+  const quotes = features.filter(f => f.type === "card").flatMap(f => f.items || []);
+  toast("🌪️ " + (pick(quotes) || "MemeVerse 🔥"));
+});
+
+init();
+tryUnlock();
+</script>
+</body>
+</html>

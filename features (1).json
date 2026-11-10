@@ -1,0 +1,280 @@
+[
+  {
+    "id": "roast",
+    "type": "roast",
+    "title": "AI Roast Generator",
+    "icon": "fa-fire",
+    "color": "warning",
+    "desc": "Type a name and get a savage roast card with a Roast Level score. Send it to your group chat.",
+    "items": [
+      {
+        "title": "The Professional Scroller",
+        "text": "You spend 12 hours on your phone and still say you're busy."
+      },
+      {
+        "title": "The Silent Listener",
+        "text": "You read every message in the group and never reply. Are you Agent 007?"
+      },
+      {
+        "title": "The Midnight Chef",
+        "text": "Your 2 AM Maggi skills are unmatched. Chef Gordon is shaking."
+      },
+      {
+        "title": "The Future Billionaire",
+        "text": "Your plans are legendary. Execution starts after 11 AM on Sunday."
+      }
+    ]
+  },
+  {
+    "id": "quiz",
+    "type": "quiz",
+    "title": "What's Your Meme Personality?",
+    "icon": "fa-brain",
+    "color": "info",
+    "desc": "Answer 3 quick questions and find out which meme you really are.",
+    "questions": [
+      {
+        "q": "Your friends are planning a trip. You...",
+        "options": [
+          {
+            "text": "Book everything and make a group itinerary",
+            "tag": "boss"
+          },
+          {
+            "text": "Say 'I'm in!' and then sleep through the alarm",
+            "tag": "chaos"
+          },
+          {
+            "text": "Bring snacks and watch everyone argue",
+            "tag": "observer"
+          }
+        ]
+      },
+      {
+        "q": "Your favorite notification is...",
+        "options": [
+          {
+            "text": "A 'like' on a post you forgot you made",
+            "tag": "chaos"
+          },
+          {
+            "text": "Your bank account showing a surprise credit",
+            "tag": "boss"
+          },
+          {
+            "text": "A silent group chat that ends with 'lol'",
+            "tag": "observer"
+          }
+        ]
+      },
+      {
+        "q": "When someone says 'Trust me bro'...",
+        "options": [
+          {
+            "text": "You ask for proof",
+            "tag": "observer"
+          },
+          {
+            "text": "You say 'Bro, I'm screenshotting this'",
+            "tag": "chaos"
+          },
+          {
+            "text": "You invest anyway",
+            "tag": "boss"
+          }
+        ]
+      }
+    ],
+    "results": {
+      "boss": {
+        "title": "The Main Character 👑",
+        "text": "You plan, you lead, you're the reason the group works. Everyone else is just following."
+      },
+      "chaos": {
+        "title": "The Chaos Gremlin 💥",
+        "text": "You make the plans, break the plans, and somehow it still ends up as a legendary story."
+      },
+      "observer": {
+        "title": "The Silent Observer 👀",
+        "text": "You see everything, say nothing, and drop the one line that wins the whole group chat."
+      }
+    }
+  },
+  {
+    "id": "wyr",
+    "type": "wyr",
+    "title": "Would You Rather",
+    "icon": "fa-scale-balanced",
+    "color": "pink",
+    "desc": "Pick a side, share it, and see if your friends agree.",
+    "items": [
+      {
+        "a": "Read minds",
+        "b": "Teleport anywhere"
+      },
+      {
+        "a": "Eat only pizza forever",
+        "b": "Eat only noodles forever"
+      },
+      {
+        "a": "Never use WhatsApp again",
+        "b": "Never use Instagram again"
+      },
+      {
+        "a": "Always be 10 minutes late",
+        "b": "Always be 20 minutes early"
+      },
+      {
+        "a": "Have a day off every week",
+        "b": "Get a 10% raise every year"
+      }
+    ]
+  },
+  {
+    "id": "tod",
+    "type": "tod",
+    "title": "Truth or Dare 😈",
+    "icon": "fa-dice",
+    "color": "gold",
+    "desc": "Pick Truth or Dare. Every round is a new question or task, with thousands of combinations, so no repeats.",
+    "truths": [
+      "What's the most embarrassing song you secretly love?",
+      "What's the last thing you searched at 2 AM?",
+      "Who in your group would survive longest in a zombie movie, and why is it you?",
+      "What fake skill have you pretended to have?",
+      "What's your most unhinged opinion about pizza?",
+      "Which emoji do you use way too much?",
+      "What's a lie you told to get out of plans?",
+      "What's the cringiest thing in your phone's notes app?",
+      "If your life had a soundtrack, what would play when you walk into a room?",
+      "What food do you pretend to like?",
+      "Have you ever waved back at someone who wasn't waving at you?",
+      "What's your go-to excuse when you're late?",
+      "What's the most dramatic thing you've done over a coffee order?",
+      "What's something you were 100% sure about that was totally wrong?",
+      "What app do you open first every morning?",
+      "Which pet would you swap lives with for one day, and why?",
+      "What's the most useless talent you have?",
+      "Which contact do you pretend you don't know in a group chat?",
+      "What would your superhero name be, and what's its weakness?",
+      "What rule do you break every single day?",
+      "What's a word you mispronounced for years before anyone told you?",
+      "If you had a theme song for your Monday mornings, what would it be?"
+    ],
+    "dares": [
+      "Send your last selfie to the group chat, with no filter and no caption.",
+      "Talk only in movie trailer voice for your next 3 messages.",
+      "Do your best dance move for 10 seconds and send it as a video.",
+      "Send a 'Good morning' voice note to the group, right now.",
+      "Let the group write your next status for 1 hour.",
+      "Do 10 push-ups while reciting your favorite dialogue.",
+      "Compliment the last person you chatted with, in Shakespearean English.",
+      "Use only emojis for your next 3 messages.",
+      "Set a random song as your status and say 'this is my anthem.'",
+      "Walk backward for 20 steps, then take a photo of it.",
+      "Rap your current mood in 4 lines.",
+      "Sing the chorus of your favorite song, as loud as you can, right now."
+    ],
+    "dareTemplates": [
+      "Talk in a {accent} accent for the next {minutes} minutes.",
+      "Narrate your day like a {animal} on a nature documentary.",
+      "Do a {animal} impression for 15 seconds. Let the group guess the animal.",
+      "Give a 30-second motivational speech to your {object}.",
+      "Rate your {thing} out of 10, out loud, and defend your score like a judge.",
+      "For the next 5 minutes, answer everything like a {job}.",
+      "Text someone your best {adjective} pickup line, and don't explain it.",
+      "Describe your {thing} as if you're selling it on a late-night TV ad."
+    ],
+    "fill": {
+      "accent": [
+        "Pirate",
+        "Scottish",
+        "Robot",
+        "Shakespearean",
+        "Sleepy grandma",
+        "Cricket commentator"
+      ],
+      "minutes": [
+        "3",
+        "5",
+        "10"
+      ],
+      "animal": [
+        "penguin",
+        "cat",
+        "goat",
+        "peacock",
+        "sloth",
+        "pigeon",
+        "frog"
+      ],
+      "object": [
+        "houseplant",
+        "pet",
+        "fridge",
+        "bicycle",
+        "phone charger"
+      ],
+      "thing": [
+        "morning coffee",
+        "dance moves",
+        "cooking skills",
+        "WhatsApp typing speed",
+        "sleeping position"
+      ],
+      "job": [
+        "traffic police officer",
+        "news anchor",
+        "cricket commentator",
+        "astrologer",
+        "wedding host",
+        "game show host"
+      ],
+      "adjective": [
+        "cheesy",
+        "dramatic",
+        "ridiculous",
+        "over-the-top"
+      ]
+    }
+  },
+  {
+    "id": "sound",
+    "type": "sound",
+    "title": "Meme Soundboard",
+    "icon": "fa-volume-high",
+    "color": "danger",
+    "desc": "Tap a sound and let the chaos speak for you.",
+    "items": [
+      {
+        "label": "🔊 Bruh",
+        "src": "sounds/bruh.wav"
+      },
+      {
+        "label": "💥 Emotional Damage",
+        "src": "sounds/emotional-damage.wav"
+      },
+      {
+        "label": "😂 Laugh Track",
+        "src": "sounds/laugh-track.wav"
+      },
+      {
+        "label": "🎉 Victory Horn",
+        "src": "sounds/victory-horn.wav"
+      }
+    ]
+  },
+  {
+    "id": "quotes",
+    "type": "card",
+    "title": "Meme Quote of the Day",
+    "icon": "fa-quote-left",
+    "color": "success",
+    "desc": "Tap the button for a random line made for sharing.",
+    "items": [
+      "Monday mood: just five more minutes of being a potato.",
+      "I have a plan. I just haven't started the plan.",
+      "Battery at 1%, but attitude at 100%."
+    ]
+  }
+]
